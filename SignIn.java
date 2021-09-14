@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SignIn implements ActionListener {
-    SignUp signUp = new SignUp();
     User user;
     public SignIn(User u){
         this.user = u;
@@ -70,29 +69,28 @@ public class SignIn implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        signUp.user.setEmail(email.getText());
-        signUp.user.setPasswordField(passwordField.getText());
-
-
-        if (user.getEmail().equals(signUp.user.getEmail())  && user.getPasswordField().equals(signUp.user.getPasswordField())){
+        if(email.getText().equals(user.getEmail()) && passwordField.getText().equals(user.getPasswordField())){
             JOptionPane.showMessageDialog(null, "Sign in Successful", "sign in", JOptionPane.INFORMATION_MESSAGE);
             Information information = new Information(user);
             information.info();
-        frame.setVisible(false);
-        }else if (!user.getEmail().equals(signUp.user.getEmail())  && user.getPasswordField().equals(signUp.user.getPasswordField()))
+            frame.setVisible(false);
+
+        }else if(!email.getText().equals(user.getEmail()) && passwordField.getText().equals(user.getPasswordField()))
             JOptionPane.showMessageDialog(null,"Email incorrect","Failed", JOptionPane.ERROR_MESSAGE);
-        else if (user.getEmail().equals(signUp.user.getEmail()) && !user.getPasswordField().equals(signUp.user.getPasswordField()))
+        else if(email.getText().equals(user.getEmail()) && !passwordField.getText().equals(user.getPasswordField()))
             JOptionPane.showMessageDialog(null,"Password incorrect","Failed", JOptionPane.ERROR_MESSAGE);
 
-        else if (signUp.user.getEmail().isEmpty() && signUp.user.getPasswordField().isEmpty())
+        else if (email.getText().isEmpty() && passwordField.getText().isEmpty())
             JOptionPane.showMessageDialog(null,"Email and Password are Empty","Failed", JOptionPane.INFORMATION_MESSAGE);
-        else if (signUp.user.getEmail().isEmpty())
+        else if (email.getText().isEmpty())
             JOptionPane.showMessageDialog(null,"Email is Empty","Failed", JOptionPane.INFORMATION_MESSAGE);
-        else if (signUp.user.getPasswordField().isEmpty())
+        else if (passwordField.getText().isEmpty())
             JOptionPane.showMessageDialog(null,"password is Empty","Failed", JOptionPane.INFORMATION_MESSAGE);
 
         else
             JOptionPane.showMessageDialog(null,"invalid Data","Failed", JOptionPane.INFORMATION_MESSAGE);
+
+
 
     }
 }
