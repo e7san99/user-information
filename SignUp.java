@@ -78,24 +78,6 @@ public class SignUp implements ActionListener {
         panel.add(passwordField);
     }
 
-    private void Gender() {                         //STOP
-        label = new JLabel("Gender:");
-        label.setBounds(50,2,80,420);
-        panel.add(label);
-
-        radioButton1 = new JRadioButton();
-        radioButton1.setBounds(130,202,20,20);
-        radioButton1.setText("");
-        panel.add(radioButton1);
-
-        radioButton2 = new JRadioButton();
-        radioButton2.setBounds(180,202,20,20);
-        panel.add(radioButton2);
-
-        buttonGroup = new ButtonGroup();
-        buttonGroup.add(radioButton1);
-        buttonGroup.add(radioButton2);
-    }  //STOP
 
     private void button() {
         button = new JButton("Sign Up");
