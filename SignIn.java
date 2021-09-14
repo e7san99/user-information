@@ -75,16 +75,16 @@ public class SignIn implements ActionListener {
             information.info();
             frame.setVisible(false);
 
-        }else if(!email.getText().equals(user.getEmail()) && passwordField.getText().equals(user.getPasswordField()))
+        }else if(!email.getText().equals(user.getEmail()) && passwordField.getPassword().length==0)
             JOptionPane.showMessageDialog(null,"Email incorrect","Failed", JOptionPane.ERROR_MESSAGE);
-        else if(email.getText().equals(user.getEmail()) && !passwordField.getText().equals(user.getPasswordField()))
+        else if(email.getText().equals(user.getEmail()) && passwordField.getPassword().length!=0)
             JOptionPane.showMessageDialog(null,"Password incorrect","Failed", JOptionPane.ERROR_MESSAGE);
 
-        else if (email.getText().isEmpty() && passwordField.getText().isEmpty())
+        else if (email.getText().isEmpty() && passwordField.getPassword().length==0)
             JOptionPane.showMessageDialog(null,"Email and Password are Empty","Failed", JOptionPane.INFORMATION_MESSAGE);
         else if (email.getText().isEmpty())
             JOptionPane.showMessageDialog(null,"Email is Empty","Failed", JOptionPane.INFORMATION_MESSAGE);
-        else if (passwordField.getText().isEmpty())
+        else if (passwordField.getPassword().length==0)
             JOptionPane.showMessageDialog(null,"password is Empty","Failed", JOptionPane.INFORMATION_MESSAGE);
 
         else
