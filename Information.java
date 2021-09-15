@@ -3,6 +3,7 @@ package com.company;
 import javax.swing.*;
 
 public class Information {
+
     User user;
     public Information(User user){
         this.user = user;
@@ -87,7 +88,6 @@ public class Information {
         label = new JLabel("_____________________________");
         label.setBounds(20,220,200,40);
         panel.add(label);
-
 
 
         frame.setVisible(true);
