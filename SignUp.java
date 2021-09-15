@@ -78,7 +78,6 @@ public class SignUp implements ActionListener {
         panel.add(passwordField);
     }
 
-
     private void button() {
         button = new JButton("Sign Up");
         button.setBounds(150,260,80,15);
@@ -98,13 +97,12 @@ public class SignUp implements ActionListener {
         panel.add(checkBox);
     }
 
-
     @Override
     public void actionPerformed(ActionEvent e) {
         user.setFirstName(firstName.getText());
         user.setLastName(lastName.getText());
         user.setEmail(email.getText());
-        user.setPasswordField(passwordField.getText());
+        user.setPasswordField(String.valueOf(passwordField.getPassword()));
 
         if ((!user.getFirstName().isEmpty() || !user.getLastName().isEmpty() || !user.getEmail().isEmpty() || !user.getPasswordField().isEmpty())) {
             JOptionPane.showMessageDialog(null, "Sign up successful", "SignUp", JOptionPane.INFORMATION_MESSAGE);
