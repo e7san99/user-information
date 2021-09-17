@@ -54,14 +54,14 @@ public class SignIn implements ActionListener {
                 passwordField.setEchoChar('*');
         });
         panel.add(checkbox);
-        
-        
+
+
                         //button
         button = new JButton("login");
         button.setBounds(155,180,65,20);
         button.addActionListener(this);
         panel.add(button);
-        
+
 
         frame.setVisible(true);
     }
@@ -69,6 +69,7 @@ public class SignIn implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(email.getText().equals(user.getEmail()) && String.valueOf(passwordField.getPassword()).equals(user.getPasswordField())) {
+
             JOptionPane.showMessageDialog(null, "Sign in Successful", "sign in", JOptionPane.INFORMATION_MESSAGE);
             Information information = new Information(user);
             information.info();
