@@ -12,6 +12,8 @@ public class Information {
     private JPanel panel;
     private JFrame frame;
     private JLabel label;
+    private JButton exit;
+    private JButton create;
 
     public void info(){
         panel = new JPanel();
@@ -89,6 +91,39 @@ public class Information {
         label.setBounds(20,220,200,40);
         panel.add(label);
 
+                //Gender
+        label = new JLabel("Your Gender is:");
+        label.setBounds(30,240,150,40);
+        panel.add(label);
+
+        label = new JLabel(user.getGender());
+        label.setBounds(140,250,250,20);
+        panel.add(label);
+
+        label = new JLabel("_____________________________");
+        label.setBounds(20,220,200,40);
+        panel.add(label);
+
+/////////////////////////////////
+        exit = new JButton("Exit");
+        exit.setBounds(10,285,60,20);
+        exit.addActionListener(e-> {
+            int response = JOptionPane.showConfirmDialog(null, "You want Exit", "EXIT",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+        if (response==JOptionPane.YES_OPTION)
+            System.exit(0);
+        });
+        panel.add(exit);
+////////////////////////////////
+
+        create = new JButton("Create New Account");
+        create.setBounds(110,285,160,20);
+        create.addActionListener(e->{
+            frame.setVisible(false);
+            SignUp signUp = new SignUp();
+            signUp.register();
+        });
+        panel.add(create);
 
         frame.setVisible(true);
     }
