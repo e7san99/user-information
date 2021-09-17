@@ -5,7 +5,17 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
-    private String passwordField;
+    private String password;
+    private String gender;
+
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -32,12 +42,10 @@ public class User {
     }
 
     public String getPasswordField() {
-        return passwordField;
+        return password;
     }
 
-    public void setPasswordField(String passwordField) {
-        this.passwordField = passwordField;
+    public void setPasswordField(String password) {
+        this.password = password;
     }
 }
-
-
