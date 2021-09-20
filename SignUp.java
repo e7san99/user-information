@@ -20,6 +20,7 @@ public class SignUp implements ActionListener {
     User user = new User();            //User Class
 
     public void register(){
+
         panel = new JPanel();
         panel.setLayout(null);
 
@@ -27,6 +28,7 @@ public class SignUp implements ActionListener {
         frame.setSize(350,450);
         frame.setTitle("Sign-up System");
         frame.add(panel);
+        frame.setLocationRelativeTo(null); //frame aka la cenetr pshan dadat
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
 
 
@@ -51,17 +53,6 @@ public class SignUp implements ActionListener {
         frame.setVisible(true);   //Frame Visibility
     }
 
-    private void reset() {
-        reset = new JButton("Reset");
-        reset.setBounds(230,300,75,15);
-        reset.addActionListener(e->{
-            firstName.setText(null);
-            lastName.setText(null);
-            email.setText(null);
-            passwordField.setText(null);
-        });
-        panel.add(reset);
-    }
 
     private void label() {
         label = new JLabel("First Name:");                    //firstName label
@@ -138,6 +129,17 @@ public class SignUp implements ActionListener {
         panel.add(checkBox);
     }
 
+    private void reset() {
+        reset = new JButton("Reset");
+        reset.setBounds(230,300,75,15);
+        reset.addActionListener(e->{
+            firstName.setText(null);
+            lastName.setText(null);
+            email.setText(null);
+            passwordField.setText(null);
+        });
+        panel.add(reset);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -158,6 +160,7 @@ public class SignUp implements ActionListener {
             frame.setVisible(false);
             SignIn signIn = new SignIn(user);
             signIn.loginSystem();
+
         }else if((user.getFirstName().isEmpty() || user.getLastName().isEmpty() ||
                 user.getEmail().isEmpty() || user.getPasswordField().isEmpty()) ){
             JOptionPane.showMessageDialog(null,"Blank Filed !","Try Again", JOptionPane.ERROR_MESSAGE);
