@@ -22,6 +22,7 @@ public class Information {
         frame = new JFrame();
         frame.setSize(300,350);
         frame.setTitle("User Information");
+        frame.setLocationRelativeTo(null); //frame aka la cenetr pshan dadat
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
         frame.add(panel);
 
