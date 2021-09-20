@@ -24,6 +24,7 @@ public class SignIn implements ActionListener {
         frame = new JFrame();
         frame.setSize(350,300);
         frame.setTitle("Login System");
+        frame.setLocationRelativeTo(null); //frame aka la cenetr pshan dadat
         frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
         frame.add(panel);
 
